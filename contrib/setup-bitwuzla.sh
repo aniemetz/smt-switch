@@ -1,6 +1,9 @@
 #!/bin/bash
-git_commit=f69eaa2f7f6f81918b45fc9f790bf70203fe0ac8
+git_commit=032e99cefaf53d82edb20425190b0232bc7f8ecb
 
+download_step() {
+  git clone --revision=$git_commit git@github.com:mpreiner/bitwuzla.git $dep_name
+}
 prepare_step() {
   "$contrib_dir/setup-cadical.sh"
 }
