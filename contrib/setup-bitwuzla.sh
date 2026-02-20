@@ -1,8 +1,8 @@
 #!/bin/bash
-git_commit=64dee7007aa0092c87dab171ea199c14f3a608a9
+git_commit=c96711661e14877662c70550e6a315fa2817ebd7
 
 download_step() {
-  git clone --revision=$git_commit git@github.com:aniemetz/bitwuzla-private.git $dep_name
+  git clone --revision=$git_commit git@github.com:bitwuzla/bitwuzla.git $dep_name
 }
 
 # prepare_step() {
