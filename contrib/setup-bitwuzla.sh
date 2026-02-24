@@ -1,5 +1,5 @@
 #!/bin/bash
-git_commit=2e7204ac7344947d5f8ee1eb8b3812ec9981cedf
+git_commit=b5a3b77a5609204c64725ab40c0975514eaf08f2
 
 download_step() {
   git clone --revision=$git_commit git@github.com:mpreiner/bitwuzla.git $dep_name

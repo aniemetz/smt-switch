@@ -5,6 +5,8 @@ configure_step() {
   meson_setup_options+=(
     -Dlibdir=lib  # makes sure libraries go into deps/install/lib
     -Dprefix="$install_dir"
+    -Dbuildtype=debug
+    -Dtesting=disabled
   )
   meson setup build "${meson_setup_options[@]}"
 }
