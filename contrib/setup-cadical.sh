@@ -11,6 +11,9 @@ install_step() {
   install -m644 src/ccadical.h "$install_includedir"
   install -m644 src/cadical.hpp "$install_includedir"
   install -m644 src/tracer.hpp "$install_includedir"
+  mkdir -p "$install_includedir/cadical/"
+  install -m644 src/cadical.hpp "$install_includedir/cadical/"
+  install -m644 src/tracer.hpp "$install_includedir/cadical/"
 }
 
 source "$(dirname "$0")/make-steps.sh"
