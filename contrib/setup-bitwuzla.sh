@@ -1,5 +1,5 @@
 #!/bin/bash
-git_commit=ef068aa1c880a5cc7bfccf47679fbae20d300d2f
+git_commit=54f24172c21ef0466208bdd3d0919fc33740e39d
 
 prepare_step() {
   "$contrib_dir/setup-cadical.sh"
