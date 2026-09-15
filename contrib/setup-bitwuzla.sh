@@ -1,8 +1,12 @@
 #!/bin/bash
-git_commit=11e0b86ef49255a8ce206a59961990d49532e4b2
+git_commit=ba59f83e436aafa0717e619c49345848dd1cebd5
 
 configure_step() {
   ./configure.py --prefix "$install_dir"
+}
+
+download_step() {
+  git clone --revision=$git_commit git@github.com:bitwuzla/bitwuzla-interpolants.git $dep_name
 }
 
 install_step() {
@@ -21,5 +25,6 @@ install_step() {
 }
 
 _setup_script_path=$(realpath "$0")
+
 # shellcheck source=contrib/meson-setup.sh
 source "$(dirname "$_setup_script_path")/meson-setup.sh"
