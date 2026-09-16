@@ -12,13 +12,15 @@ if [[ $solver =~ ^(bitwuzla|btor|cvc5|z3)$ ]]; then
   solver_hash+=$(gethash contrib/common-setup.sh)
   if [[ $solver == bitwuzla ]]; then
     solver_hash+=$(gethash contrib/meson-setup.sh)
+    # Bitwuzla brings its own CaDiCaL, which this renames after the install
+    solver_hash+=$(gethash contrib/isolate-bundled-cadical.sh)
   else
     solver_hash+=$(gethash contrib/cmake-setup.sh)
   fi
-  if [[ $solver != z3 ]]; then
+  # Boolector and cvc5 are the solvers built against our CaDiCaL
+  if [[ $solver =~ ^(btor|cvc5)$ ]]; then
     solver_hash+=$(gethash contrib/setup-cadical.sh)
     solver_hash+=$(gethash contrib/make-setup.sh)
-    solver_hash+=$(gethash contrib/pkgconfig/cadical.pc.in)
   fi
 fi
 if [[ $solver == btor ]]; then

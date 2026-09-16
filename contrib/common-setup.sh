@@ -21,7 +21,6 @@ setup_script_name=$(basename "$setup_script_path" .sh)
 dep_name="${setup_script_name##*setup-}" # remove "setup-" from script name
 this_script_path=$(realpath "${BASH_SOURCE[0]}")
 contrib_dir=$(dirname "$this_script_path")
-pkg_config_dir=$contrib_dir/pkgconfig
 deps_dir=$(dirname "$contrib_dir")/deps
 install_dir=$deps_dir/install
 install_includedir=$install_dir/include

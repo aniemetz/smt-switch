@@ -16,9 +16,12 @@ build_step() {
     ${meson_compile_options[@]+"${meson_compile_options[@]}"}
 }
 
-install_step() {
-  meson install -C build
-}
+# Can be overridden for projects that need to post-process what they install.
+if ! declare -F install_step >/dev/null; then
+  install_step() {
+    meson install -C build
+  }
+fi
 
 _setup_script_path=$(realpath "$0")
 # shellcheck source=contrib/common-setup.sh
