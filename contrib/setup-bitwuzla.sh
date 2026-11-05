@@ -1,12 +1,12 @@
 #!/bin/bash
-git_commit=ba59f83e436aafa0717e619c49345848dd1cebd5
+git_commit=6055ca4659e3e10e6f9088f424f8a2833f2b8b92
 
 configure_step() {
   ./configure.py --prefix "$install_dir"
 }
 
 download_step() {
-  git clone --revision=$git_commit git@github.com:bitwuzla/bitwuzla-interpolants.git $dep_name
+  git clone --revision=$git_commit git@github.com:aniemetz/bitwuzla-private.git $dep_name
 }
 
 install_step() {
